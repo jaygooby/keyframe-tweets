@@ -3,4 +3,4 @@
 # https://trac.ffmpeg.org/wiki/Create%20a%20thumbnail%20image%20every%20X%20seconds%20of%20the%20video
 out="./stills/$2"
 mkdir -p "$out"
-ffmpeg -i "$1" -vf scale='min(1280\, iw):-1' -vf select="eq(pict_type\,PICT_TYPE_I)" -q:v 1 -vsync 2 -f image2 "$out/thumbnail_%02d.jpg"
+ffmpeg -i "$1" -vf scale='min(1280\, iw):-1' -vf select="eq(pict_type\,PICT_TYPE_I)" -q:v 1 -vsync 2 -f image2 "$out/$2_%05d.jpg"
